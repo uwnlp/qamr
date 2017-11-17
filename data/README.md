@@ -37,7 +37,7 @@ Both versions have the same format
   5. **Question (string).** The question the worker wrote.
   6. **Answer (space-separated nats).** The answer highlighted by the worker who wrote the question.
      Answers were highlighted as sets of tokens from the sentence, and were almost always
-     contiguous. They are denoted by a space-separated list of indices in the sentence
+     contiguous. They are denoted by a space-separated list of indices in the sentence.
   7. **Validator 1 response (`<worker ID>:<judgment>`).** Before a colon is the anonymized ID of the
      validator who gave the validation judgment. After the colon is their judgment.
      In the filtered set, the judgment is always a space-separated list of nats denoting the tokens
