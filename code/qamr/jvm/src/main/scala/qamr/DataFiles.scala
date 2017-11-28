@@ -1,5 +1,6 @@
 package qamr
 
+import cats.Traverse
 import cats.Foldable
 import cats.implicits._
 
@@ -11,22 +12,68 @@ import nlpdata.util.HasTokens
 import nlpdata.util.HasTokens.ops._
 import nlpdata.util.Text
 
+import scala.util.{Try, Success, Failure}
+
 object DataFiles {
+
+  def renderValidationAnswer(
+    va: ValidationAnswer
+  ): String = va match {
+    case InvalidQuestion => "Invalid"
+    case Redundant(i) => s"Redundant-$i"
+    case Answer(span) => span.toVector.sorted.mkString(" ")
+  }
+
+  private[this] def readIntSet(s: String) = Try(s.split(" ").map(_.toInt).toSet)
+  private[this] val redundantRegex = """Redundant-([0-9]+)""".r
+  private[this] object IntMatch {
+    def unapply(s: String): Option[Int] = scala.util.Try(s.toInt).toOption
+  }
+
+  def readValidationAnswer(s: String): Try[ValidationAnswer] = s match {
+    case "Invalid" => Success(InvalidQuestion)
+    case redundantRegex(IntMatch(i)) => Success(Redundant(i))
+    case answerIndices => readIntSet(answerIndices).map(Answer(_))
+  }
+
+  def readValidationAnswerWithWorkerId(s: String) = Try {
+    val Array(workerId, valAnswer) = s.split(":")
+    readValidationAnswer(valAnswer).map(workerId -> _)
+  }.flatten
+
+  def readTSV[F[_] : Traverse, SID](
+    lines: F[String],
+    idFromString: String => SID
+  ): Try[QAData[SID]] = {
+    lines.traverse { line =>
+      Try {
+        val fields = line.split("\t")
+        val id = idFromString(fields(0))
+        val keywords = readIntSet(fields(1)).get.toList.sorted
+        val generatorId = fields(2)
+        val qaIndex = fields(3).toInt
+        val qaPairId = QAPairId(id, keywords, generatorId, qaIndex)
+
+        val keyword = fields(4).toInt
+        val question = fields(5)
+        val origAnswer = readIntSet(fields(6)).get
+        val wqa = WordedQAPair(keyword, question, origAnswer)
+
+        val valResponsesTry = List(
+          readValidationAnswerWithWorkerId(fields(7)),
+          readValidationAnswerWithWorkerId(fields(8))
+        ).sequence
+
+        valResponsesTry.map(SourcedQA(qaPairId, wqa, _))
+      }.flatten
+    }.map(sqas => QAData(sqas.toList))
+  }
 
   def makeSentenceIndex[F[_]: Foldable, SID : HasTokens](
     ids: F[SID],
     writeId: SID => String
   ): String = {
     ids.toList.map(id => s"${writeId(id)}\t${id.tokens.mkString(" ")}").mkString("\n")
-  }
-
-  // NOTE: used for final output of data
-  def renderValidationAnswerFinal(
-    va: ValidationAnswer
-  ): String = va match {
-    case InvalidQuestion => "Invalid"
-    case Redundant(i) => s"Redundant-$i"
-    case Answer(span) => span.toVector.sorted.mkString(" ")
   }
 
   def makeFinalQAPairTSV[F[_]: Foldable, SID](
@@ -71,7 +118,7 @@ object DataFiles {
               sentenceSB.append(wqa.answer.toVector.sorted.mkString(" ") + "\t") // 6: answer indices given by original worker
               sentenceSB.append(
                 valResponses.map { case (valWorkerId, valAnswer) =>
-                  anonymizeWorker(valWorkerId) + ":" + renderValidationAnswerFinal(valAnswer) // 7-8: validator responses
+                  anonymizeWorker(valWorkerId) + ":" + renderValidationAnswer(valAnswer) // 7-8: validator responses
                 }.mkString("\t")
               )
               sentenceSB.append("\n")
