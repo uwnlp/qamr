@@ -10,13 +10,16 @@ Another subproject with the analysis of our data is coming soon.
 ## Setup
 
 Prerequisites:
+
  * [sbt](http://www.scala-sbt.org/) to run the project, and
  * [wget](https://www.gnu.org/software/wget/) to download some dependencies (if necessary).
 
 After installing the prerequistes, clone this repository and run `scripts/setup.sh`.
 This will load two necessary dependencies:
+
   * [spacro](https://github.com/julianmichael/spacro), used to run the MTurk annotation pipeline, and
   * [nlpdata](https://github.com/julianmichael/nlpdata), used for text processing and NLP datasets.
+
 (They're loaded as submodules and published locally because I haven't bothered to publish them on Maven.)
 The setup script will then prompt you to download several datasets to support the annotation pipeline.
 These are not necessary for the QAMR annotation pipeline (the `qamr` project) if you're running it with your own data,
@@ -44,10 +47,10 @@ To do so, follow these instructions:
  6. In a separate terminal, run `tail -f example.log`.
     You should see a message like `Server is listening on http://0:0:0:0:0:0:0:0:8888`.
     There will also be an `HTTPS configuration failed` message; this is expected.
- 7. In a browser window, open `localhost:8888/task/generation/preview`.
+ 7. In a browser window, open `http://localhost:8888/task/generation/preview`.
     This should show you the instructions and a sample interface for the question-writing task.
     (Submitting results will not work on this preview, but you can try out the interface.)
-    Similarly for the question-answering task at `localhost:8888/task/validation/preview`.
+    Similarly for the question-answering task at `http://localhost:8888/task/validation/preview`.
     
 If you wish to shut down the server and end the session, type `exit` to stop the processes from running and then `:q` to exit the console.
 (If you don't type `exit` first, the process will hang waiting for the actor system and logging to terminate, which it won't.)
@@ -62,7 +65,7 @@ Follow these instructions to run our example pipeline:
  3. Use the [`openssl`](https://www.openssl.org/docs/man1.0.2/apps/openssl.html) command line tool to generate a keystore for your certificate in the `.p12` format.
  4. Place the keystore at `qamr-example/jvm/src/main/resources/<domain>.p12`.
  5. Place the keystore password in a standalone file at `qamr-example/jvm/src/main/resources/<domain>-keystore-password`.
- 6. In `scripts/init_example.scala`, change `val domain` from `localhost` to your domain name.
+ 6. In `scripts/init_example.scala`, change `val domain` from `localhost` to `<domain>`.
  7. Follow the dry run instructions. This time, after running `init`, in the logs you should see
     something like `Server is listening on https://0:0:0:0:0:0:0:0:8080` (note the HTTPS scheme in the URL).
  8. On the SBT console, run `exp.start()`. This will upload a few HITs to the sandbox.
@@ -70,7 +73,7 @@ Follow these instructions to run our example pipeline:
     This will also cause the system to start polling MTurk for finished results.
     The polling interval can be changed by running e.g. `exp.stop(); exp.start(10 seconds)`,
     and you can poll manually with `exp.update`.
- 9. Access your HITs on the sandbox by following the URLs printed in the logs.
+ 9. Access your HITs on the sandbox by visiting the URLs printed in the logs.
     (There will only be two distinct URLs; one for the generation task and another for the validation task.
     The validation HITs will only start being uploaded once generation results are processed.)
     The first time you do the HITs, you will have to request the qualifications or complete the qualification test.
@@ -98,7 +101,7 @@ and in general execute arbitrary Scala code.
 #### Running on MTurk in production
 
  1. In `scripts/init_example.scala`, set `isProduction` to `true`.
- 2. Make sure you have enough funds in your MTurk account
+ 2. Make sure you have enough funds in your MTurk account.
  3. Follow the steps given for running in the sandbox.
  4. When annotation is finished, to output the results in the official format
     to `data/example/static/out`, run `data.writeAllTSVs`.
