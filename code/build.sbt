@@ -8,7 +8,7 @@ lazy val root = project.in(file("."))
             publishLocal := {})
 
 lazy val commonSettings = Seq(
-  organization := "com.github.julianmichael",
+  organization := "com.github.uwnlp",
   scalaOrganization in ThisBuild := "org.typelevel",
   scalaVersion in ThisBuild := "2.11.8",
   scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-language:higherKinds"/*, "-Ypartial-unification"*/),
