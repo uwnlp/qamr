@@ -1,0 +1,3 @@
+package qamr
+
+trait PackagePlatformExtensions
