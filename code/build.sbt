@@ -3,7 +3,8 @@ val monocleVersion = "1.4.0-M2"
 
 lazy val root = project.in(file("."))
   .aggregate(qamrJVM, qamrJS,
-             exampleJVM, exampleJS)
+             exampleJVM, exampleJS,
+             analysisJVM, analysisJS)
   .settings(publish := {},
             publishLocal := {})
 
@@ -115,3 +116,17 @@ lazy val exampleJVM = example.jvm.dependsOn(qamrJVM).settings(
   (resources in Compile) += (packageScalaJSLauncher in (exampleJS, Compile)).value.data,
   (resources in Compile) += (packageJSDependencies in (exampleJS, Compile)).value
 )
+
+lazy val analysis = crossProject.in(file("qamr-analysis")).settings(
+  commonSettings
+).settings(
+  name := "qamr-analysis",
+  version := "0.1-SNAPSHOT"
+).jvmSettings(
+  commonJVMSettings
+).jsSettings(
+  commonJSSettings
+)
+
+lazy val analysisJS = analysis.js.dependsOn(qamrJS, exampleJS)
+lazy val analysisJVM = analysis.jvm.dependsOn(qamrJVM, exampleJVM)
