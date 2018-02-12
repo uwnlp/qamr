@@ -17,6 +17,9 @@ import nlpdata.util.HasTokens.ops._
 // NOTE: change the two values below between runs or hosts.
 val domain = "localhost" // change to domain of production server
 val isProduction = false // sandbox. change to true for production
+val interface = "0.0.0.0"
+val httpPort = 8888
+val httpsPort = 8080
 
 val rootPath = java.nio.file.Paths.get(".")
 val dataPath = rootPath.resolve("data/example")
@@ -27,10 +30,14 @@ implicit val timeout = akka.util.Timeout(5.seconds)
 implicit val config: TaskConfig = {
   if(isProduction) {
     val hitDataService = new FileSystemHITDataService(annotationPath.resolve("production"))
-    ProductionTaskConfig("qamr-example", domain, hitDataService)
+    ProductionTaskConfig("qamr-example", domain,
+                         interface, httpPort, httpsPort,
+                         hitDataService)
   } else {
     val hitDataService = new FileSystemHITDataService(annotationPath.resolve("sandbox"))
-    SandboxTaskConfig("qamr-example", domain, hitDataService)
+    SandboxTaskConfig("qamr-example", domain,
+                      interface, httpPort, httpsPort,
+                      hitDataService)
   }
 }
 

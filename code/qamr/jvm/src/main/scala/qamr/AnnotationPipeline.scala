@@ -187,7 +187,10 @@ class AnnotationPipeline[SID : Reader : Writer : HasTokens](
     keywords = "language,english,question answering",
     qualRequirements = Array[QualificationRequirement](
       approvalRateRequirement, localeRequirement, genAccuracyRequirement
-    ))
+    ),
+    autoApprovalDelay = 2592000L, // 30 days
+    assignmentDuration = 600L // 10 minutes
+  )
 
   lazy val genApiFlow = Flow[GenerationApiRequest[SID]].map {
     case GenerationApiRequest(id) =>
@@ -213,7 +216,10 @@ class AnnotationPipeline[SID : Reader : Writer : HasTokens](
     keywords = "language,english,question answering",
     qualRequirements = Array[QualificationRequirement](
       approvalRateRequirement, localeRequirement, valAgreementRequirement, valTestRequirement
-    ))
+    ),
+    autoApprovalDelay = 2592000L, // 30 days
+    assignmentDuration = 600L // 10 minutes
+  )
 
   lazy val valApiFlow = Flow[ValidationApiRequest[SID]].map {
     case ValidationApiRequest(id) =>
