@@ -13,7 +13,7 @@ class DataExporter(
   implicit config: TaskConfig
 ) {
 
-  import setup.SentenceIdHasTokens
+  import setup.annotationConfig.SentenceIdHasTokens
 
   val allGenInfos = setup.experiment.allGenInfos
   val allValInfos = setup.experiment.allValInfos
@@ -63,27 +63,27 @@ class DataExporter(
     DataFiles.makeFinalReadableQAPairTSV(ids, SentenceId.toString, workerAnonymizationMap, allGenInfos, allValInfos, true)
 
   def writeFinalSentenceIndex = {
-    setup.saveOutputFile("wiki-sentences.tsv", DataFiles.makeSentenceIndex(wikiIds, SentenceId.toString))
+    setup.annotationConfig.saveOutputFile("wiki-sentences.tsv", DataFiles.makeSentenceIndex(wikiIds, SentenceId.toString))
   }
 
   def writeFinalFullTSVs = {
-    setup.saveOutputFile("full/train.tsv", makeFullTSV(trainIds))
-    setup.saveOutputFile("full/dev.tsv", makeFullTSV(devIds))
-    setup.saveOutputFile("full/test.tsv", makeFullTSV(testIds))
-    setup.saveOutputFile("full/ptb.tsv", makeFullTSV(ptbIds))
+    setup.annotationConfig.saveOutputFile("full/train.tsv", makeFullTSV(trainIds))
+    setup.annotationConfig.saveOutputFile("full/dev.tsv", makeFullTSV(devIds))
+    setup.annotationConfig.saveOutputFile("full/test.tsv", makeFullTSV(testIds))
+    setup.annotationConfig.saveOutputFile("full/ptb.tsv", makeFullTSV(ptbIds))
   }
 
   def writeFinalFilteredTSVs = {
-    setup.saveOutputFile("filtered/train.tsv", makeFilteredTSV(trainIds))
-    setup.saveOutputFile("filtered/dev.tsv", makeFilteredTSV(devIds))
-    setup.saveOutputFile("filtered/test.tsv", makeFilteredTSV(testIds))
-    setup.saveOutputFile("filtered/ptb.tsv", makeFilteredTSV(ptbIds))
+    setup.annotationConfig.saveOutputFile("filtered/train.tsv", makeFilteredTSV(trainIds))
+    setup.annotationConfig.saveOutputFile("filtered/dev.tsv", makeFilteredTSV(devIds))
+    setup.annotationConfig.saveOutputFile("filtered/test.tsv", makeFilteredTSV(testIds))
+    setup.annotationConfig.saveOutputFile("filtered/ptb.tsv", makeFilteredTSV(ptbIds))
   }
 
   def writeFinalReadableTSVs = {
-    setup.saveOutputFile("readable/train.tsv", makeReadableTSV(trainIds))
-    setup.saveOutputFile("readable/dev.tsv", makeReadableTSV(devIds))
-    setup.saveOutputFile("readable/test.tsv", makeReadableTSV(testIds))
+    setup.annotationConfig.saveOutputFile("readable/train.tsv", makeReadableTSV(trainIds))
+    setup.annotationConfig.saveOutputFile("readable/dev.tsv", makeReadableTSV(devIds))
+    setup.annotationConfig.saveOutputFile("readable/test.tsv", makeReadableTSV(testIds))
   }
 
   def writeAllTSVs = {

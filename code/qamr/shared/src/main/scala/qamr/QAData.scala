@@ -2,6 +2,8 @@ package qamr
 
 import qamr.util._
 
+import cats.Monoid
+
 /** Holds a subset of the data gathered in the turk task,
   * for the purposes of analysis. Has convenience functions for filtering as well.
   */
@@ -28,6 +30,8 @@ class QAData[SID](
       val newQAs = qas.filter(p)
       Some(id -> newQAs).filter(const(newQAs.nonEmpty))
     })
+
+  def combine(that: QAData[SID]): QAData[SID] = QAData(this.all ++ that.all)
 }
 
 object QAData {
@@ -35,5 +39,10 @@ object QAData {
     val idToQA = sqas.map(sqa => sqa.id -> sqa).toMap
     val sentenceToQAs = sqas.groupBy(_.id.sentenceId)
     new QAData(sqas, idToQA, sentenceToQAs)
+  }
+
+  implicit def qaDataMonoid[SID] = new Monoid[QAData[SID]] {
+    def empty: QAData[SID] = QAData[SID](Nil)
+    def combine(x: QAData[SID], y: QAData[SID]): QAData[SID] = x combine y
   }
 }
