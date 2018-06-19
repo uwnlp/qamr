@@ -52,29 +52,41 @@ object Main extends App {
     }
   }
 
-  val annotationConfig = new AnnotationConfig(dataPath, resourcePath)
-  import annotationConfig.SentenceIdHasTokens
+  try {
+    val annotationConfig = new AnnotationConfig(dataPath, resourcePath)
+    import annotationConfig.SentenceIdHasTokens
 
-  val datasets = new Datasets(Paths.get("../data"))
+    val datasets = new Datasets(Paths.get("../data"))
 
-  val trainDev = datasets.train |+| datasets.dev
-  val allUnfiltered = datasets.trainFull |+| datasets.devFull |+| datasets.testFull
+    val trainDev = datasets.train |+| datasets.dev
+    val allUnfiltered = datasets.trainFull |+| datasets.devFull |+| datasets.testFull
 
-  val Wiktionary = new WiktionaryFileSystemService(Paths.get("datasets/wiktionary"))
+    val Wiktionary = new WiktionaryFileSystemService(Paths.get("datasets/wiktionary"))
 
-  implicit val inflections = Wiktionary.getInflectionsForTokens(
-    trainDev.sentenceToQAs.keys.iterator.flatMap(_.tokens)
-  )
+    implicit val inflections = Wiktionary.getInflectionsForTokens(
+      trainDev.sentenceToQAs.keys.iterator.flatMap(_.tokens)
+    )
 
-  val extPhrases = new ExternalPhrases(annotationConfig, trainDev)
-  val validation = new Validation(allUnfiltered)
+    val extPhrases = new ExternalPhrases(annotationConfig, trainDev)
+    val validation = new Validation(allUnfiltered)
+    val srlComparison = new SRLComparison(annotationConfig, datasets.ptb)
 
-  println(extPhrases.fullReport)
-  println
-  println(validation.report)
+    println(extPhrases.fullReport)
+    println
 
-  config.actorSystem.terminate
-  import org.slf4j.LoggerFactory
-  import ch.qos.logback.classic.LoggerContext
-  LoggerFactory.getILoggerFactory.asInstanceOf[LoggerContext].stop
+    println(validation.report)
+    println
+
+    println(srlComparison.pbRecallReport)
+    println
+    println(srlComparison.nbRecallReport)
+    println
+    println(srlComparison.qasrlRecallReport)
+
+  } finally {
+    config.actorSystem.terminate
+    import org.slf4j.LoggerFactory
+    import ch.qos.logback.classic.LoggerContext
+    LoggerFactory.getILoggerFactory.asInstanceOf[LoggerContext].stop
+  }
 }

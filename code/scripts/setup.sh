@@ -29,6 +29,12 @@ then
     echo "It requires an LDC license. Webpage: https://catalog.ldc.upenn.edu/ldc99t42"
 fi
 
+if [ ! -e "datasets/ontonotes-release-5.0/" ]
+then
+    echo "-WARNING- Please download Ontonotes 5 and place it at datasets/ontonotes-release-5.0 in order to reproduce the data analysis. Relevant projects: analysis"
+    echo "It requires an LDC license. Webpage: https://catalog.ldc.upenn.edu/ldc2013t19"
+fi
+
 if [ ! -e "datasets/wiki1k/" ]
 then
     read -p $'Download Wiki1k data? (relevant projects: example, analysis) [y/N]\n' answer
@@ -78,6 +84,21 @@ then
             echo "Skipping PropBank. Run setup.sh again if you change your mind."
             ;;
     esac
+fi
+
+if [ -e "datasets/propbank" ]
+then
+    if [ ! -e "datasets/propbank/conversion_complete" ]
+    then
+        if [ -e "datasets/ontonotes-release-5.0" ]
+        then
+            pushd datasets/propbank/docs/scripts
+            python2 map_all_to_conll.py --ontonotes ../../../ontonotes-release-5.0 && touch ../../conversion_complete
+            popd
+        else
+            echo "-WARNING- In order to do the PropBank SRL comparison, the gold CoNLL files need to be converted from Ontonotes 5. Please download Ontonotes 5 and re-run the setup script to do the conversion. Relevant projects: analysis"
+        fi
+    fi
 fi
 
 if [ ! -e "datasets/nombank.1.0/" ]
