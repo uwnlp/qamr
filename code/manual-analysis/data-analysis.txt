@@ -1,0 +1,199 @@
+Code	Question	Original Answer	Validator Answers	
+==	Each of the twenty-four tirthankara is associated with distinctive emblems, which are listed in such texts as Tiloyapannati, Kahavaali and Pravacanasaarodhara.			
+VCORE-VAR	What is there a list of in the Tiloyapannati?	emblems	distinctive emblems	texts
+COPMOD	What is associated with distinctive emblems?	the twenty-four tirthankara	Each of the twenty-four tirthankara	tirthankara
+VMOD-CO	What text is the associate emblems listed in?	Tiloyapannati Kahavaali and Pravacanasaarodhara	Tiloyapannati, Kahavaali and Pravacanasaarodhara	Tiloyapannati, Kahavaali and Pravacanasaarodhara
+VCORE	What is listed in the Tiloyapannati?	emblems	distinctive emblems	twenty-four tirthankara
+==	US Ambassador to France Jane D. Hartley attended.			
+APPCO	What is Jane?	Ambassador	Ambassador	US Ambassador to France
+NMOD-VAR	Where is the Ambassador from?	US	US	US
+==	This is bureaucracy gone wild-the Minister wants to remove the crossing because he doesn't like some pictures that people have been taking.			
+VCORE-VAR	What type of system of government has gone wild ?	bureaucracy	bureaucracy	bureaucracy
+VCORE-CO	Who didn't like the pictures?	the Minister	the Minister	the Minister
+VCORE-CO	Who doesn't like pictures?	he	the Minister	the Minister
+==	Cyclones of this level of intensity (as measured by top wind speed and central pressure value) are very, very rare.			
+COPMOD	What with this level of intensity are rare?	Cyclones	Cyclones	Cyclones
+DET	What level	this	this	this
+NMOD	What kind of speed is it?	wind	top	top wind speed
+NMOD	Which wind speed is it?	top	top wind speed	top wind speed
+COPMOD-FOC	What about it is very rare?	level	this level of intensity	of this level of intensity (as measured by top wind speed and central pressure value)
+COPMOD	What is very rare?	intensity	Cyclones of this level of intensity	Cyclones of this level of intensity (as measured by top wind speed and central pressure value)
+==	This in turn can be made into a nisbah adjective ishtirākī 'socialist', from which an abstract noun ishtirākiyyah 'socialism' can be derived.			
+APPCO-VAR	What does the noun ishtirakiyyah mean?	socialism	socialism	socialism
+VCORE	What can be derived?	an abstract noun	an abstract noun	an abstract noun ishtirākiyyah 'socialism' can be derived
+APPCO	What part of speech is ishtirakiyyah?	abstract noun	abstract noun	abstract noun
+==	When Timur captured the Ottoman Sultan Bayezid at Ankara, he was often praised and seen as a trusted ally by European rulers such as Charles VI of France and Henry IV of England because they believed he was saving Christianity from the Turkish Empire in the Middle East.			
+VCORE-VAR	Why did he earn their praise?	they believed he was saving Christianity from the Turkish Empire	they believed he was saving Christianity	they believed he was saving Christianity from the Turkish Empire in the Middle East
+REL	What religion does France and England believe in?	Christianity	Christianity	Christianity
+VCORE	Who did they think he was saving Christianity from	Turkish Empire	the Turkish Empire in the Middle East	Turkish Empire
+VCORE-IMP	Who was Timur trusted by ?	European rulers	European rulers	European rulers
+NAME	What was the Sultan's name?	Bayezid	Bayezid	Bayezid
+VCORE-CO	Who believed Timur was saving Christianity?	Charles VI of France and Henry IV of England	European rulers	European rulers
+VCORE	Who captured Bayezid?	Timur	Timur	Timur
+==	In an interview to be aired on Sky News today, he said the housing market is the "biggest risk" to the economy and has "deep, deep structural problems".			
+NCORE	What was the market a risk to?	economy	the economy	economy
+VCORE-VAR	What network aired the interview about problems?	Sky News	Sky News	Sky News
+==	Mahlunga has said he did nothing wrong and Judge Horn said he "failed to express genuine remorse".			
+NAME	What is the Judge's last name?	Horn	Horn	Horn
+REL-FOC	who doubted his remorse was genuine?	Judge Horn	Judge Horn	Judge Horn
+VCORE-CO	who didn't express genuine remorse?	Mahlunga	Mahlunga	Mahlunga
+==	Armstrong was born on August 5, 1930 in Wapakoneta, Ohio.			
+COPMOD	Who was born on August 5?	Armstrong	Armstrong	Armstrong
+==	This is not well-known due to the nuclear issue however.			
+COPMOD	What is not well known due to the issue?	This	This	This
+COPMOD	What is not well-known?	This	This	This
+==	Currently, there are 700 US soldiers in Iraq, mostly there to guard the US embassy and the international airport in Baghdad, facilities in Erbil, and to assess the capabilities of the Iraqi military.			
+NMOD-VAR	Whose soldiers are in Iraq?	US	US	US soldiers
+NMOD-VAR	What city is the airport located in?	Baghdad	Baghdad	Baghdad
+VCORE	What airport do some of the 700 soldiers guard?	the international airport in Baghdad	international airport in Baghdad	international airport in Baghdad
+==	Resistance organizations in the Gaza Strip continued to launch rockets aimed at the Tel Aviv area and other areas of Israel; some of these rockets were intercepted by Israel's Iron Dome system.			
+NMOD	Where are the organizations?	Gaza Strip	the Gaza Strip	Gaza Strip
+VCORE-VAR	What country intercepted something?	Israel	Israel	Israel
+VCORE	Where were the rockets aimed at?	the Tel Aviv area and other areas of Israel	Tel Aviv area and other areas of Israel	the Tel Aviv area and other areas of Israel
+==	Climate change affects distribution of weeds, pests, and diseases.			
+VCORE	What affects distribution of diseases?	Climate change	Climate change	Climate change
+VCORE	What affects distribution of pests?	Climate change	Climate change	Climate change
+VCORE-VAR	What is affected?	distribution of weeds, pests, and diseases	distribution	distribution
+NCORE	What kind of change affects pests	Climate	Climate change	Climate
+==	London, England-When Mohamed Kamara enters the Olympic Stadium during the 2012 Summer Paralympics Opening Ceremony on Wednesday night representing Sierra Leone, he will become only the second Paralympic competitor to ever represent his country.			
+NAME	Which stadium will Kamara enter?	Olympic	Olympic Stadium	Olympic Stadium
+NMOD	What number Paralympics competitor will he be?	second	second	second
+VMOD-IMP	Where will he represent Sierra Leone?	2012 Summer Paralympics	Paralympics	the Olympic Stadium during the 2012 Summer Paralympics Opening Ceremony
+NMOD	When on Wednesday is the Opening Ceremony?	night	night	night
+REL	Where is the stadium?	London, England	London, England	London England
+VCORE	What country will he represent at the stadium?	Sierra Leone	Sierra Leone	Paralympic
+NMOD	What year's ceremony?	2012	2012	2012
+==	Baruch ben Neriah, Jeremiah's scribe, used this alphabet to create the later scripts of the Old Testament.			
+VCORE-CO	Who created the later scripts?	Jeremiah's scribe	Baruch ben Neriah	Baruch ben Neriah
+VCORE	Who created?	Baruch ben Neriah	Baruch ben Neriah	Baruch ben Neriah
+VCORE-SYN	Who wrote the scripts?	scribe	Baruch ben Neriah	Baruch ben Neriah
+VCORE	What did Baruch use?	this alphabet	alphabet	this alphabet
+VCORE	Who used it?	Baruch	Baruch ben Neriah	Baruch ben Neriah
+VCORE-VAR	What did Baruch do with an alphabet?	used	create the later scripts of the Old Testament	used to create the later scripts of the Old Testament
+==	If the heart is unable to pump sufficient blood, it may accumulate throughout the body, causing breathlessness in the lungs (pulmonary congestion; pulmonary edema), swelling (edema) of the feet or other gravity-dependent areas, decrease exercise tolerance, or cause other clinical signs such as an enlarged liver, cardiac murmurs, or a raised jugular venous pressure.			
+APPCO-VAR	What is swelling of the body parts called?	edema	edema	edema
+VCORE	What will it do if not pumped?	may accumulate throughout the body	accumulate	it may accumulate
+NMOD	What type of signs?	clinical	clinical	clinical
+COPART-VAR	What is an enlarged liver an example of?	clinical signs	clinical signs	clinical signs
+APPCO-VAR	What is another name for swelling?	edema	edema	edema
+VMOD	Where may blood accumulate?	throughout the body	throughout the body	throughout the body
+COPART-VAR	What's an example of other clinical signs?	an enlarged liver	an enlarged liver, cardiac murmurs, or a raised jugular venous pressure	such as an enlarged liver cardiac murmurs, or a raised jugular venous pressure
+==	Legend states that during his cremation, his body burned for seven days and nights.			
+VMOD	When did the body burn?	during his cremation	during his cremation	during his cremation
+==	Another flight, flying between Haneda Airport and Matsuyama said the pilot's side window in the cockpit suffered a crack.			
+VMOD	Where is the flight flying?	between Haneda Airport and Matsuyama	between Haneda Airport and Matsuyama	Matsuyama
+==	Ryanair denied he would have been fired for taking time off to recover.			
+VCORE-VAR	What is being taken?	time	time off to recover	time off
+==	Canberra's response came from Norwood, who drew a foul and scored a point from a free throw.			
+NCORE	Whose response?	Canberra	Canberra's	Canberra's
+VCORE	Which team drew a foul?	Canberra	Norwood	Norwood
+==	Smaller snakes eat smaller prey.			
+VCORE	What eats?	snakes	snakes	snakes
+==	To go back to Canada, there are half as many people in Canada as in the UK, twice as many houses are built every year in Canada as in the UK and we can't influence that. "			
+REL	Where are there twice as many people?	UK	UK	UK
+VMOD	Where are they built?	Canada	Canada	Canada
+VCORE-CO	What can't we influence?	twice as many houses are built every year in Canada as in the UK	twice as many houses are built every year in Canada	that
+==	Volunteers are presently renovating the former post office in the town of Edwards, Mississippi, United States for the doctor to have an office.			
+VCORE	What are they renovating?	the former post office	the former post office	former post office
+VMOD-SYN	Who are working in Edwards Mississippi?	Volunteers	Volunteers	Volunteers
+NMOD-IMP	What state is the former post office in?	Mississippi	Mississippi	Mississippi
+NMOD-VAR	What country is the city of Edwards in?	United States	United States	United States
+VCORE	Who is renovating it in Edwards?	Volunteers	Volunteers	Volunteers
+VMOD	What state are the volunteers renovating in?	Mississippi	Mississippi	Mississippi
+VMOD-IMP	What state is the post office in?	Mississippi	Mississippi	Mississippi
+VCORE	What do they want the doctor to have??	an office	an office	an office
+OTHER	what state	Mississippi	Mississippi	Mississippi
+VMOD-IMP	What country are the volunteers renovating in?	United States	United States	United States
+NMOD-IMP	What town is the post office in?	Edwards	Edwards	Edwards
+==	There were some residents in the damaged house who were not accounted for until about 4:30 p.m. when emergency personnel confirmed that three people inside the house were also killed.			
+NUM	How many residents were not accounted for?	some	some	three
+NMOD	What kind of personnel?	emergency	emergency personnel	emergency personnel
+VMOD-IMP	What time were they confirmed dead?	4:30 p.m.	4:30 p.m.	4:30 p.m.
+==	The last public statement B.B King made, according to The Sydney Morning Herald, was early this month.			
+REL	When did the Herald say someone made something?	early this month	this month	early this month
+NMOD	What was earlier this month?	The last public statement B.B King made	The last public statement B.B King made	last public statement
+==	Yesterday, the US's Obama administration said it has ordered an investigation into the appropriateness of military hardware being sold to and deployed by police forces in the United States.			
+VCORE-VAR	What was ordered?	investigation	an investigation	an investigation
+NCORE	What was the investigation into?	appropriateness of military hardware	the appropriateness of military hardware being sold	the appropriateness of military hardware being sold to and deployed by police forces in the United States
+VMOD	When did it say it's investigating into hardware?	Yesterday	Yesterday	Yesterday
+VCORE	Who is it deployed by?	police forces	police forces	US's Obama administration
+==	Rough diamonds will have a distinctive shape depending on whether their source is a mine or from an alluvial environment such as a beach or river-alluvial diamonds have smoother surfaces than those that have been mined.			
+VCORE	What will have a distinctive shape?	diamonds	Rough	diamonds
+VCORE	What has a smoother surface than mined diamonds?	alluvial diamonds	alluvial diamonds	alluvial diamonds
+REL	What can be mined or alluvial?	diamonds	diamonds	Rough diamonds
+==	In Byron's later memoirs, "Mary Chaworth is portrayed as the first object of his adult sexual feelings."			
+VCORE	Who is portrayed in the work?	Mary Chaworth	Mary Chaworth	Mary Chaworth
+COEXACT-IMP	Who was the object of his sexual feelings?	Mary Chaworth	Mary Chaworth	Mary Chaworth
+NMOD-VAR-CO	Who was Mary the object of sexual feelings for?	Byron	Byron	Byron
+==	But the easier production, and the better availability of the raw material for the first time permitted the equipment of entire armies with metal weapons, though Bronze Age Egyptian armies were sometimes fully equipped with bronze weapons.			
+NMOD-VAR	What are made of metal?	weapons	weapons	weapons
+COPMOD	Who was equipped with bronze weapons?	Bronze Age Egyptian armies	Egyptian armies	Egyptian armies
+NMOD	What armies were sometimes fully equipped?	Bronze Age Egyptian armies	entire	Bronze Age Egyptian
+==	The situation is far from over as Sterling is refusing to sell the team, and the other teams have lobbied against him to force him to sell.			
+COPMOD	What is far from over?	situation	The situation	The situation
+VCORE-CO	Who are they lobbying against?	him	Sterling	Sterling
+REL	Who wants to force him to sell?	other teams	other teams	other teams
+==	Nevertheless, other interpreters consider that Kant was trying to mark off a defensible rational core of Christian belief.			
+VCORE	What do the interpreters do?	consider	consider	consider
+VCORE	Who considers?	interpreters	interpreters	other interpreters
+==	Planck made many contributions to theoretical physics, but his fame as a physicist rests primarily on his role as the originator of quantum theory, which revolutionized human understanding of atomic and subatomic processes.			
+NMOD	What kind of physics?	theoretical	theoretical	theoretical
+VCORE-SYN	What theory enhanced understanding of processes?	quantum theory	quantum	quantum
+REL	What job did the originator of quantum theory have	a physicist	physicist	physicist
+NMOD-VAR	What was his role for quantum theory?	originator	originator	originator
+==	Examples of this would be an individual's resistance to consumerism in a retreat to a simpler but perhaps harder lifestyle, or an individual's resistance to a terminal illness.			
+NCORE	What is the resistance to?	a terminal illness	consumerism	terminal illness
+NMOD	What kind of lifestyle is it/	harder	simpler	harder
+==	The victims were taking part in the French reality television show 'Dropped' when the accident happened.			
+VCORE	What happened during the show?	accident	the accident happened	accident
+==	Investment casting was invented in 4500-4000 BC in Southeast Asia and carbon dating has established mining at Alderley Edge in Cheshire, UK at 2280 to 1890 BC.			
+VCORE	What was invented?	casting	Investment casting	casting
+VMOD	When was investment casting invented?	4000	4500-4000 BC	4500 4000 BC
+VCORE-VAR	What years were established for mining?	2280 to 1890 BC	1890	2280 to 1890 BC
+==	He received certification (ijazah) for all these subjects.			
+NCORE	What did he receive certification for?	these subjects	all these subjects	all these subjects
+VCORE	Who received certification for the subjects?	He	He	He
+NCORE	What was certification for?	all these subjects	all these subjects	all these subjects
+AMT	How many of these subjects?	all	all	all
+==	The Oxford Classical Texts offers the current standard complete Greek text of Plato's complete works.			
+NMOD	What kind of works?	complete	Plato's complete works	complete
+VCORE	What does Oxford Classical Texts offer?	the current standard complete Greek text of Plato's complete works	the current standard complete Greek text of Plato's complete works	current standard
+VCORE	What offers a current text of something?	The Oxford Classical Texts	The Oxford Classical Texts	Oxford Classical Texts
+VCORE	what does oxford offers	the current standard complete Greek text of Plato's complete works	the current standard complete Greek text of Plato's complete works	Greek text
+NMOD	Whose works are complete?	Plato's	Plato's	Plato
+NMOD	What type of text does Oxford offer ?	standard	Classical	Classical
+VCORE	who offers the current standard	Oxford Classical	The Oxford Classical Texts	Oxford Classical Texts
+==	Although Eisenhower warned Kennedy about Laos and Vietnam, Europe and Latin America "loomed larger than Asia on his sights."			
+VCORE	Who did Eisenhower warn?	Eisenhower	Kennedy	Kennedy
+==	A civil uprising in 2000 stalled some iniatives, but the 2002 CEDAW review assisted in reviving efforts.			
+NMOD	When was the civil uprising?	2000	2000	in 2000
+VCORE-VAR	What was stalled?	some iniatives	iniatives	civil uprising
+==	He briefly ran for president as a Republican in 2011 before rejoining the Libertarian Party to seek its 2012 presidential nomination.			
+VCORE	Which office did he run for?	president	president	president
+VCORE-!	What is the Libertarian party seeking?	presidential nomination	nomination	2012 presidential nomination
+==	The ossicles are the malleus (hammer), incus (anvil), and the stapes (stirrup).			
+COPART-VAR	What is the malleus one of?	The ossicles	The ossicles	ossicles
+==	Food supplies would be diverted to the German army and German civilians.			
+REL	What nationality was receiving the food?	German	German	German
+VCORE	What would be diverted to the German army?	Food supplies	Food supplies	Food supplies
+NMOD	What army?	German army	German	German army
+NMOD	What civilians?	German civilians	German	German civilians
+==	At this point Noosa rumbled over through a series of about ten rucks.			
+AMT	What numbered ten?	rucks	rucks	series
+VCORE	What did Noosa rumble through?	a series of about ten rucks	rucks	rucks
+DET	What is this?	point	this point	point
+VMOD	How did he rumble?	over	over	over
+==	In addition to vastly increasing the number of known exoplanets, it has now been established that solar systems with multiple planets are common, and approximately Earth-sized exoplanets are relatively common.			
+AMT	What kind of planets?	multiple	multiple	multiple
+COPMOD	What are relatively common?	approximately Earth-sized exoplanets	exoplanets	approximately Earth-sized exoplanets
+==	Muffat became the Olympic champion in the 400m freestyle event at the 2012 Summer Olympics in London, England.			
+NMOD	Where were the Summer Olympics?	London England	London	London, England
+NMOD-VAR	Where was the 400m event held?	London England	London, England	Summer Olympics
+VCORE	Who became champion in England?	Muffat	Muffat	Muffat
+==	Isabel: This is kind of a give and take, it's a mixture of both.			
+COPCO-CO	What is a mixture of both?	it's	it's	This
+==	The harsh sentences are just the latest moves in the politically motivated crackdown on the New Citizens Movement, Nee said later in an emailed statement.			
+VMOD	When did Nee say it?	later	later	later
+VCORE-VAR	What was done with the statement?	emailed	emailed	emailed
+==	On 23 November, he arrived in Damascus amid general acclamation and rested at his father's old home there, until the gates of the Citadel of Damascus, whose commander Raihan initially refused to surrender, were opened to Saladin four days later, after a brief siege by his brother Tughtakin ibn Ayyub.			
+REL	Who went to the home?	Saladin	he	he

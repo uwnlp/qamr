@@ -68,20 +68,22 @@ object Main extends App {
     )
 
     val extPhrases = new ExternalPhrases(annotationConfig, trainDev)
-    val validation = new Validation(allUnfiltered)
-    val srlComparison = new SRLComparison(annotationConfig, datasets.ptb)
-
     println(extPhrases.fullReport)
     println
 
+    val validation = new Validation(allUnfiltered)
     println(validation.report)
     println
 
+    val srlComparison = new SRLComparison(annotationConfig, datasets.ptb)
     println(srlComparison.pbRecallReport)
     println
     println(srlComparison.nbRecallReport)
     println
     println(srlComparison.qasrlRecallReport)
+
+    val manualAnalysis = new ManualAnalysis("manual-analysis/data-analysis.txt")
+    println(manualAnalysis.report)
 
   } finally {
     config.actorSystem.terminate
