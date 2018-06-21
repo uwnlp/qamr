@@ -1,11 +1,10 @@
 # QAMR Code
 
-There are two subprojects:
+There are three main subprojects:
 
  * `qamr`: The QAMR annotation pipeline, instantiable for any data.
  * `qamr-example`: Example instantiation of the pipeline used to generate the data in this repository.
- 
-Another subproject with the analysis of our data is coming soon.
+ * `qamr-analysis`: Code for processing the data, including performing our manual analysis from the paper.
 
 ## Setup
 
@@ -26,9 +25,7 @@ These are not necessary for the QAMR annotation pipeline (the `qamr` project) if
 but they are necessary for our pipeline (`qamr-example`) or the data analysis (coming soon).
 In the latter cases you will also have to download the Penn Treebank (version 2) and place it at `datasets/ptb`.
 
-## Usage
-
-### Running the annotation
+## Annotation pipeline
 
 See the code in `qamr-example` to get an idea of how you would set up an annotation pipeline for your own data.
 Here we will write instructions for running that pipeline, but they translate to any similar project.
@@ -114,3 +111,16 @@ which would affect how the results are stored and retrieved on disk.
 To understand these issues, I encourage you to take a closer look at the code in this repository or
 in the [spacro](https://github.com/julianmichael/spacro) commit being loaded as a submodule.
 If you have any questions, or if anything doesn't work as expected, please file an issue and I'll be happy to help.
+
+## Analysis
+
+To run the manual analysis to produce the numbers in the NAACL paper, run `scripts/run_analysis.sh`.
+You can also produce a SQuAD-formatted version of the dataset with `scripts/write_squad_formatted.sh`.
+The `.json` files will be in `data/example/static/out/`.
+
+See the `manual-analysis/` directory for the 150-question sample we annotated for the manual analysis,
+including a description of the coding scheme.
+
+Numbers output by our analysis code are very close to what is published in the paper, but are very
+slightly off due to unimportant differences in the details of how they were calculated (i.e.,
+"reproduction noise").
