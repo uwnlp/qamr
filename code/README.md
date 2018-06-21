@@ -35,7 +35,7 @@ Here we will write instructions for running that pipeline, but they translate to
 To make sure everything is working, you should first start the webserver and try local previews of the task interface.
 To do so, follow these instructions:
 
- 1. Download the Penn Treebank and Wiki1k datasets (the latter you can get with `scripts/setup.sh`).
+ 1. Download the Penn Treebank and Wiki1k datasets (the latter you can get with `scripts/setup.sh`). You may have to change the Penn Treebank data file names to upper case.
  2. Make sure you have an [MTurk requester account](https://requester.mturk.com/) associated with an [Amazon AWS](https://aws.amazon.com/) account.
  3. Make that your AWS credentials are at `~/.aws/credentials`.
  4. Run `scripts/run_example.sh`.
