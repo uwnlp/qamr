@@ -327,22 +327,4 @@ object SRLComparison {
     }
     qas
   }
-
-  val resourcePath = java.nio.file.Paths.get("datasets")
-
-  lazy val PTB = new PTBFileSystemService(
-    resourcePath.resolve("ptb")
-  )
-
-  lazy val PropBank = new PropBankFileSystemService(
-    resourcePath.resolve("propbank")
-  )
-
-  lazy val NomBank = new NomBankFileSystemService(
-    resourcePath.resolve("nombank.1.0"), PTB
-  )
-
-  lazy val QASRL = new QASRLFileSystemService(
-    resourcePath.resolve("qasrl"), PTB
-  )
 }

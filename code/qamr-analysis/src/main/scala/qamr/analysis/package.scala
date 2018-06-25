@@ -105,4 +105,33 @@ package object analysis {
     def stdevOpt(implicit N: Numeric[A]) = fa.varianceOpt.map(math.sqrt)
     def stdevSampleOpt(implicit N: Numeric[A]) = fa.varianceSampleOpt.map(math.sqrt)
   }
+
+
+  val resourcePath = java.nio.file.Paths.get("datasets")
+
+  import nlpdata.datasets.ptb._
+  import nlpdata.datasets.propbank._
+  import nlpdata.datasets.nombank._
+  import nlpdata.datasets.qasrl._
+  import nlpdata.datasets.wiki1k._
+
+  lazy val PTB = new PTBFileSystemService(
+    resourcePath.resolve("ptb")
+  )
+
+  lazy val PropBank = new PropBankFileSystemService(
+    resourcePath.resolve("propbank")
+  )
+
+  lazy val NomBank = new NomBankFileSystemService(
+    resourcePath.resolve("nombank.1.0"), PTB
+  )
+
+  lazy val QASRL = new QASRLFileSystemService(
+    resourcePath.resolve("qasrl"), PTB
+  )
+
+  lazy val Wiki1k = new Wiki1kFileSystemService(
+    resourcePath.resolve("wiki1k")
+  )
 }

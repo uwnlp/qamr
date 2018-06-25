@@ -1,5 +1,6 @@
 val scalaJSReactVersion = "1.1.0"
 val monocleVersion = "1.4.0-M2"
+val circeVersion = "0.8.0"
 
 lazy val root = project.in(file("."))
   .aggregate(qamrJVM, qamrJS,
@@ -121,5 +122,8 @@ lazy val analysis = project.in(file("qamr-analysis")).settings(
   name := "qamr-analysis",
   version := "0.1-SNAPSHOT",
   commonSettings,
-  commonJVMSettings
+  commonJVMSettings,
+  libraryDependencies ++= Seq(
+    "io.argonaut" %% "argonaut" % "6.2"
+  )
 ).dependsOn(qamrJVM, exampleJVM)
