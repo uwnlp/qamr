@@ -1,0 +1,101 @@
+<html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="./brat/style-vis.css"/>
+   <script type="text/javascript" src="./brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+  <script language="javascript">
+
+    var bratLocation = './brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+    
+    var collData = {
+    
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+    
+
+
+
+    var docData = {
+    
+    // Our text of choice
+    text     : SENTENCE-STUB,
+    // The entities entry holds all entity annotations
+    entities : [
+        /* Format: [${ID}, ${TYPE}, [[${START}, ${END}]]]
+            note that range of the offsets are [${START},${END}) 
+        ['T1', 'Predicate', [[0, 11]]],
+        ['T2', 'Predicate', [[20, 23]]],
+        ['T3', 'Predicate', [[37, 40]]],
+    ['T4', 'Predicate', [[50, 61]]], */
+      ENTITIES-STUB
+    ],
+
+    };
+
+   
+
+docData['relations'] = [ 
+    // Format: [${ID}, ${TYPE}, [[${ARGNAME}, ${TARGET}], [${ARGNAME}, ${TARGET}]]]
+/*    ['R1', 'Who said something?', [['dep', 'T2'], ['head', 'T1']]] */
+      RELATIONS-STUB
+    ];
+
+     head.ready(function() {
+    Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'here',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+});
+
+  </script>
+  
+
+  <div id="here"></div>
+  
+  
+</body>
+</html>

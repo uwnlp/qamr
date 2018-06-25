@@ -1,0 +1,119 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "The director general of the BCC , John Longworth said to the BBC that `` the pound 's helping '' to increase exports .",
+
+    entities: [
+
+    ['A39_48', 'Predicate', [[39, 48]]],
+['A109_116', 'Predicate', [[109, 116]]],
+['A100_108', 'Predicate', [[100, 108]]],
+['A54_64', 'Predicate', [[54, 64]]],
+['A49_53', 'Predicate', [[49, 53]]],
+['A28_31', 'Predicate', [[28, 31]]],
+['A4_20', 'Predicate', [[4, 20]]],
+['A86_93', 'Predicate', [[86, 93]]],
+['A73_85', 'Predicate', [[73, 85]]],
+['A34_38', 'Predicate', [[34, 38]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'What is being increased?', [['head', 'A100_108'], ['dep', 'A109_116']]],
+['R1', 'What did John say?', [['head', 'A49_53'], ['dep', 'A100_108']]],
+['R2', 'Who did John say it to?', [['head', 'A49_53'], ['dep', 'A54_64']]],
+['R3', 'What position does the person saying this hold?', [['head', 'A49_53'], ['dep', 'A28_31']]],
+['R4', 'What did John say?', [['head', 'A49_53'], ['dep', 'A86_93']]],
+['R5', 'Who said it?', [['head', 'A49_53'], ['dep', 'A34_38']]],
+['R6', 'Who is the director general of the BCC?', [['head', 'A28_31'], ['dep', 'A4_20']]],
+['R7', 'Whose helping is it?', [['head', 'A86_93'], ['dep', 'A73_85']]],
+['R8', 'What is the last name of John?', [['head', 'A34_38'], ['dep', 'A39_48']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>

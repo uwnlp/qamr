@@ -1,0 +1,128 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "`` An air-quality cleanup would improve crop yields -LSB- ... -RSB- Ozone is something that we understand the causes of , and the steps that need to be taken to improve air quality . ''",
+
+    entities: [
+
+    ['A95_105', 'Predicate', [[95, 105]]],
+['A32_39', 'Predicate', [[32, 39]]],
+['A40_44', 'Predicate', [[40, 44]]],
+['A26_31', 'Predicate', [[26, 31]]],
+['A130_135', 'Predicate', [[130, 135]]],
+['A18_25', 'Predicate', [[18, 25]]],
+['A152_157', 'Predicate', [[152, 157]]],
+['A141_145', 'Predicate', [[141, 145]]],
+['A92_94', 'Predicate', [[92, 94]]],
+['A110_116', 'Predicate', [[110, 116]]],
+['A6_17', 'Predicate', [[6, 17]]],
+['A161_168', 'Predicate', [[161, 168]]],
+['A45_51', 'Predicate', [[45, 51]]],
+['A169_180', 'Predicate', [[169, 180]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'Who understands the causes of ozone?', [['head', 'A95_105'], ['dep', 'A110_116']]],
+['R1', 'Who understands the causes of ozone?', [['head', 'A95_105'], ['dep', 'A92_94']]],
+['R2', 'What can an air-quality cleanup improve?', [['head', 'A32_39'], ['dep', 'A45_51']]],
+['R3', 'What would a cleanup improve?', [['head', 'A26_31'], ['dep', 'A32_39']]],
+['R4', 'What would an air-quality cleanup improve?', [['head', 'A26_31'], ['dep', 'A18_25']]],
+['R5', 'What would an air-quality cleanup improve?', [['head', 'A26_31'], ['dep', 'A45_51']]],
+['R6', 'What kind of cleanup is it?', [['head', 'A18_25'], ['dep', 'A6_17']]],
+['R7', 'Who understands the need to take steps?', [['head', 'A141_145'], ['dep', 'A95_105']]],
+['R8', 'Who understands the need to take steps?', [['head', 'A141_145'], ['dep', 'A152_157']]],
+['R9', 'Who understands the need to take steps?', [['head', 'A141_145'], ['dep', 'A92_94']]],
+['R10', 'What needs to be improved?', [['head', 'A141_145'], ['dep', 'A161_168']]],
+['R11', 'What needs to be taken?', [['head', 'A141_145'], ['dep', 'A130_135']]],
+['R12', 'What needs to be improved?', [['head', 'A141_145'], ['dep', 'A169_180']]],
+['R13', 'What kind of yields are they?', [['head', 'A45_51'], ['dep', 'A40_44']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>

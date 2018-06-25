@@ -1,0 +1,128 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "By the time the Upper Mississippi reaches Saint Paul , Minnesota , below Lock and Dam No. 1 , it has dropped more than half its original elevation and is 687 feet -LRB- 209 m -RRB- above sea level .",
+
+    entities: [
+
+    ['A169_172', 'Predicate', [[169, 172]]],
+['A34_41', 'Predicate', [[34, 41]]],
+['A82_91', 'Predicate', [[82, 91]]],
+['A101_108', 'Predicate', [[101, 108]]],
+['A158_162', 'Predicate', [[158, 162]]],
+['A48_52', 'Predicate', [[48, 52]]],
+['A22_33', 'Predicate', [[22, 33]]],
+['A154_157', 'Predicate', [[154, 157]]],
+['A73_77', 'Predicate', [[73, 77]]],
+['A109_146', 'Predicate', [[109, 146]]],
+['A16_21', 'Predicate', [[16, 21]]],
+['A55_64', 'Predicate', [[55, 64]]],
+['A187_190', 'Predicate', [[187, 190]]],
+['A42_47', 'Predicate', [[42, 47]]],
+['A173_174', 'Predicate', [[173, 174]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'How many feet is 209 meters?', [['head', 'A169_172'], ['dep', 'A158_162']]],
+['R1', 'What is 209 measured in?', [['head', 'A169_172'], ['dep', 'A173_174']]],
+['R2', 'What lock and dam does it reach?', [['head', 'A34_41'], ['dep', 'A73_77']]],
+['R3', 'When has it dropped some amount?', [['head', 'A101_108'], ['dep', 'A55_64']]],
+['R4', 'When has it dropped some amount?', [['head', 'A101_108'], ['dep', 'A22_33']]],
+['R5', 'When has it dropped some amount?', [['head', 'A101_108'], ['dep', 'A34_41']]],
+['R6', 'When has it dropped some amount?', [['head', 'A101_108'], ['dep', 'A48_52']]],
+['R7', 'How much had the water dropped?', [['head', 'A101_108'], ['dep', 'A109_146']]],
+['R8', 'How many feet in 209 meters?', [['head', 'A158_162'], ['dep', 'A154_157']]],
+['R9', 'What Paul?', [['head', 'A48_52'], ['dep', 'A42_47']]],
+['R10', 'Which Mississippi? ', [['head', 'A22_33'], ['dep', 'A16_21']]],
+['R11', 'What city is Lock and Dam No. 1 near?', [['head', 'A73_77'], ['dep', 'A82_91']]],
+['R12', 'Where at the sea is it above?', [['head', 'A187_190'], ['dep', 'A158_162']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>

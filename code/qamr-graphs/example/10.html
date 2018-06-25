@@ -1,0 +1,137 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "This category includes trading posts as well as larger colonies where colonists would constitute much of the political and economic administration , but would rely on indigenous resources for labour and material .",
+
+    entities: [
+
+    ['A55_63', 'Predicate', [[55, 63]]],
+['A159_163', 'Predicate', [[159, 163]]],
+['A40_44', 'Predicate', [[40, 44]]],
+['A153_158', 'Predicate', [[153, 158]]],
+['A132_146', 'Predicate', [[132, 146]]],
+['A70_79', 'Predicate', [[70, 79]]],
+['A80_85', 'Predicate', [[80, 85]]],
+['A48_54', 'Predicate', [[48, 54]]],
+['A31_36', 'Predicate', [[31, 36]]],
+['A14_22', 'Predicate', [[14, 22]]],
+['A178_187', 'Predicate', [[178, 187]]],
+['A192_198', 'Predicate', [[192, 198]]],
+['A23_30', 'Predicate', [[23, 30]]],
+['A203_211', 'Predicate', [[203, 211]]],
+['A167_177', 'Predicate', [[167, 177]]],
+['A123_131', 'Predicate', [[123, 131]]],
+['A0_13', 'Predicate', [[0, 13]]],
+['A86_96', 'Predicate', [[86, 96]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'What colonies?', [['head', 'A55_63'], ['dep', 'A48_54']]],
+['R1', 'What political organization relied on resources?', [['head', 'A159_163'], ['dep', 'A178_187']]],
+['R2', 'What are trading posts as well as?', [['head', 'A40_44'], ['dep', 'A55_63']]],
+['R3', 'What would constitutes rely on?', [['head', 'A153_158'], ['dep', 'A159_163']]],
+['R4', 'Who would need labour?', [['head', 'A153_158'], ['dep', 'A70_79']]],
+['R5', 'What kind of colonies?', [['head', 'A70_79'], ['dep', 'A55_63']]],
+['R6', 'What would the colonists do?', [['head', 'A80_85'], ['dep', 'A86_96']]],
+['R7', 'What would the colonists do?', [['head', 'A80_85'], ['dep', 'A123_131']]],
+['R8', 'What would colonists constitute much of?', [['head', 'A80_85'], ['dep', 'A70_79']]],
+['R9', 'What type of posts are they?', [['head', 'A31_36'], ['dep', 'A23_30']]],
+['R10', 'What category includes larger colonies? ', [['head', 'A14_22'], ['dep', 'A55_63']]],
+['R11', 'What includes trading posts?', [['head', 'A14_22'], ['dep', 'A31_36']]],
+['R12', 'What includes things that  rely on resources?', [['head', 'A14_22'], ['dep', 'A178_187']]],
+['R13', 'What includes things that  rely on resources?', [['head', 'A14_22'], ['dep', 'A159_163']]],
+['R14', 'What includes things that  rely on labour?', [['head', 'A14_22'], ['dep', 'A192_198']]],
+['R15', 'What includes things that  rely on material?', [['head', 'A14_22'], ['dep', 'A203_211']]],
+['R16', 'What category includes larger colonies? ', [['head', 'A14_22'], ['dep', 'A0_13']]],
+['R17', 'What are the resources?', [['head', 'A178_187'], ['dep', 'A167_177']]],
+['R18', 'What is economic?', [['head', 'A123_131'], ['dep', 'A132_146']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "Because different types of water -LRB- summer , fresh , tropical fresh , winter north Atlantic -RRB- have different densities , subsequent regulations required painting a group of lines forward of the Plimsoll mark to indicate the safe depth -LRB- or freeboard above the surface -RRB- to which a specific ship could load in water of various densities .",
+
+    entities: [
+
+    ['A324_329', 'Predicate', [[324, 329]]],
+['A151_159', 'Predicate', [[151, 159]]],
+['A180_185', 'Predicate', [[180, 185]]],
+['A139_150', 'Predicate', [[139, 150]]],
+['A294_309', 'Predicate', [[294, 309]]],
+['A8_17', 'Predicate', [[8, 17]]],
+['A341_350', 'Predicate', [[341, 350]]],
+['A310_315', 'Predicate', [[310, 315]]],
+['A231_241', 'Predicate', [[231, 241]]],
+['A333_340', 'Predicate', [[333, 340]]],
+['A27_32', 'Predicate', [[27, 32]]],
+['A218_226', 'Predicate', [[218, 226]]],
+['A201_209', 'Predicate', [[201, 209]]],
+['A316_323', 'Predicate', [[316, 323]]],
+['A186_193', 'Predicate', [[186, 193]]],
+['A261_278', 'Predicate', [[261, 278]]],
+['A251_260', 'Predicate', [[251, 260]]],
+['A18_23', 'Predicate', [[18, 23]]],
+['A116_125', 'Predicate', [[116, 125]]],
+['A210_214', 'Predicate', [[210, 214]]],
+['A171_176', 'Predicate', [[171, 176]]],
+['A128_138', 'Predicate', [[128, 138]]],
+['A160_168', 'Predicate', [[160, 168]]],
+['A80_85', 'Predicate', [[80, 85]]],
+['A86_94', 'Predicate', [[86, 94]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'What could a ship do in respect to water?', [['head', 'A324_329'], ['dep', 'A316_323']]],
+['R1', 'What is the Plimsoll characteristic of?', [['head', 'A324_329'], ['dep', 'A231_241']]],
+['R2', 'What densities of water can a ship load?', [['head', 'A324_329'], ['dep', 'A341_350']]],
+['R3', 'What densities of water can a ship load?', [['head', 'A324_329'], ['dep', 'A333_340']]],
+['R4', 'Which ship could load water?', [['head', 'A324_329'], ['dep', 'A294_309']]],
+['R5', 'What could it do in the water?', [['head', 'A324_329'], ['dep', 'A310_315']]],
+['R6', 'What do the required lines indicate?', [['head', 'A151_159'], ['dep', 'A251_260']]],
+['R7', 'What do the required lines indicate?', [['head', 'A151_159'], ['dep', 'A324_329']]],
+['R8', 'What was required to paint?', [['head', 'A151_159'], ['dep', 'A180_185']]],
+['R9', 'What required the painting of a group of lines?', [['head', 'A151_159'], ['dep', 'A160_168']]],
+['R10', 'What required the painting of a group of lines?', [['head', 'A151_159'], ['dep', 'A139_150']]],
+['R11', 'What do the required lines indicate?', [['head', 'A151_159'], ['dep', 'A218_226']]],
+['R12', 'What direction are the lines?', [['head', 'A180_185'], ['dep', 'A186_193']]],
+['R13', 'What regulations required painting line groups?', [['head', 'A180_185'], ['dep', 'A171_176']]],
+['R14', 'What direction are the lines?', [['head', 'A180_185'], ['dep', 'A210_214']]],
+['R15', 'What kind of regulations were they?', [['head', 'A139_150'], ['dep', 'A128_138']]],
+['R16', 'How many densities does it have?', [['head', 'A341_350'], ['dep', 'A333_340']]],
+['R17', 'What are the different types of water?', [['head', 'A27_32'], ['dep', 'A80_85']]],
+['R18', 'What do the lines indicate?', [['head', 'A218_226'], ['dep', 'A251_260']]],
+['R19', 'What do the lines indicate?', [['head', 'A218_226'], ['dep', 'A324_329']]],
+['R20', 'What is freeboard?', [['head', 'A251_260'], ['dep', 'A261_278']]],
+['R21', 'What type of densities do they have?', [['head', 'A18_23'], ['dep', 'A8_17']]],
+['R22', 'What type of regulations required painting?', [['head', 'A18_23'], ['dep', 'A139_150']]],
+['R23', 'What are some types of water?', [['head', 'A18_23'], ['dep', 'A27_32']]],
+['R24', 'What are types of water in a group?', [['head', 'A18_23'], ['dep', 'A80_85']]],
+['R25', 'What type of densities do they have?', [['head', 'A18_23'], ['dep', 'A116_125']]],
+['R26', 'What is the name of the mark?', [['head', 'A210_214'], ['dep', 'A201_209']]],
+['R27', 'What is north?', [['head', 'A80_85'], ['dep', 'A86_94']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>
