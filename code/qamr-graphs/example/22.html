@@ -1,0 +1,121 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "China has made an increasing number of foreign investments in recent years , in an attempt to increase its international standing .",
+
+    entities: [
+
+    ['A0_5', 'Predicate', [[0, 5]]],
+['A62_68', 'Predicate', [[62, 68]]],
+['A18_28', 'Predicate', [[18, 28]]],
+['A83_90', 'Predicate', [[83, 90]]],
+['A69_74', 'Predicate', [[69, 74]]],
+['A47_58', 'Predicate', [[47, 58]]],
+['A121_129', 'Predicate', [[121, 129]]],
+['A10_14', 'Predicate', [[10, 14]]],
+['A94_102', 'Predicate', [[94, 102]]],
+['A39_46', 'Predicate', [[39, 46]]],
+['A107_120', 'Predicate', [[107, 120]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'What was increasing?', [['head', 'A18_28'], ['dep', 'A47_58']]],
+['R1', 'What kind of years?', [['head', 'A69_74'], ['dep', 'A62_68']]],
+['R2', 'What type of investments are these?', [['head', 'A47_58'], ['dep', 'A39_46']]],
+['R3', 'Who made foreign investments?', [['head', 'A10_14'], ['dep', 'A0_5']]],
+['R4', 'What is China making in regards to its standing?', [['head', 'A10_14'], ['dep', 'A94_102']]],
+['R5', 'What have they made?', [['head', 'A10_14'], ['dep', 'A18_28']]],
+['R6', 'When have they made foreign investments?', [['head', 'A10_14'], ['dep', 'A69_74']]],
+['R7', 'What is China making in regards to its standing?', [['head', 'A10_14'], ['dep', 'A83_90']]],
+['R8', 'What international thing are they increasing?', [['head', 'A94_102'], ['dep', 'A121_129']]],
+['R9', 'What type of standing are they increasing?', [['head', 'A94_102'], ['dep', 'A107_120']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>

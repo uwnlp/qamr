@@ -1,0 +1,147 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "Because of substantial growth of cities and the larger ships and barges that supplanted riverboats , the first decades of the 20th century saw the construction of massive engineering works such as levees , locks and dams , often built in combination .",
+
+    entities: [
+
+    ['A131_138', 'Predicate', [[131, 138]]],
+['A33_39', 'Predicate', [[33, 39]]],
+['A171_182', 'Predicate', [[171, 182]]],
+['A48_54', 'Predicate', [[48, 54]]],
+['A111_118', 'Predicate', [[111, 118]]],
+['A197_203', 'Predicate', [[197, 203]]],
+['A139_142', 'Predicate', [[139, 142]]],
+['A235_249', 'Predicate', [[235, 249]]],
+['A147_159', 'Predicate', [[147, 159]]],
+['A216_220', 'Predicate', [[216, 220]]],
+['A229_234', 'Predicate', [[229, 234]]],
+['A122_130', 'Predicate', [[122, 130]]],
+['A183_188', 'Predicate', [[183, 188]]],
+['A88_98', 'Predicate', [[88, 98]]],
+['A65_71', 'Predicate', [[65, 71]]],
+['A105_110', 'Predicate', [[105, 110]]],
+['A223_228', 'Predicate', [[223, 228]]],
+['A77_87', 'Predicate', [[77, 87]]],
+['A163_170', 'Predicate', [[163, 170]]],
+['A11_22', 'Predicate', [[11, 22]]],
+['A23_29', 'Predicate', [[23, 29]]],
+['A206_211', 'Predicate', [[206, 211]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'What century?', [['head', 'A131_138'], ['dep', 'A122_130']]],
+['R1', 'When were massive levees constructed?', [['head', 'A147_159'], ['dep', 'A105_110']]],
+['R2', 'When were massive levees constructed?', [['head', 'A147_159'], ['dep', 'A131_138']]],
+['R3', 'What type of works were constructed?', [['head', 'A147_159'], ['dep', 'A183_188']]],
+['R4', 'Which century saw the construction?', [['head', 'A147_159'], ['dep', 'A139_142']]],
+['R5', 'What type of works were constructed?', [['head', 'A147_159'], ['dep', 'A163_170']]],
+['R6', 'What are levees, locks, and dams?', [['head', 'A216_220'], ['dep', 'A197_203']]],
+['R7', 'What are levees, locks, and dams?', [['head', 'A216_220'], ['dep', 'A206_211']]],
+['R8', 'When were engineering works built?', [['head', 'A229_234'], ['dep', 'A105_110']]],
+['R9', 'When were engineering works built?', [['head', 'A229_234'], ['dep', 'A131_138']]],
+['R10', 'What was built in combination?', [['head', 'A229_234'], ['dep', 'A183_188']]],
+['R11', 'Why did these massive works begin to be built?', [['head', 'A229_234'], ['dep', 'A23_29']]],
+['R12', 'How are leeves, locks, and dams built?', [['head', 'A229_234'], ['dep', 'A235_249']]],
+['R13', 'Why did these massive works begin to be built?', [['head', 'A229_234'], ['dep', 'A77_87']]],
+['R14', 'What was built in combination?', [['head', 'A229_234'], ['dep', 'A163_170']]],
+['R15', 'What are the works?', [['head', 'A183_188'], ['dep', 'A216_220']]],
+['R16', 'What was the first?', [['head', 'A105_110'], ['dep', 'A111_118']]],
+['R17', 'What was the construction of?', [['head', 'A223_228'], ['dep', 'A183_188']]],
+['R18', 'What was the construction of?', [['head', 'A223_228'], ['dep', 'A163_170']]],
+['R19', 'What did barges supplant?', [['head', 'A77_87'], ['dep', 'A65_71']]],
+['R20', 'What did larger ships supplant?', [['head', 'A77_87'], ['dep', 'A88_98']]],
+['R21', 'What is massive?', [['head', 'A163_170'], ['dep', 'A171_182']]],
+['R22', 'What grew substantially?', [['head', 'A23_29'], ['dep', 'A33_39']]],
+['R23', 'How large was the cities growth?', [['head', 'A23_29'], ['dep', 'A48_54']]],
+['R24', 'What size growth was it?', [['head', 'A23_29'], ['dep', 'A11_22']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>

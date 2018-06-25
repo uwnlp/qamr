@@ -1,0 +1,116 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "In the mean time , much stronger friction over land quickly reduces their strength .",
+
+    entities: [
+
+    ['A33_41', 'Predicate', [[33, 41]]],
+['A24_32', 'Predicate', [[24, 32]]],
+['A68_82', 'Predicate', [[68, 82]]],
+['A19_23', 'Predicate', [[19, 23]]],
+['A12_16', 'Predicate', [[12, 16]]],
+['A42_51', 'Predicate', [[42, 51]]],
+['A7_11', 'Predicate', [[7, 11]]],
+['A52_59', 'Predicate', [[52, 59]]],
+['A60_67', 'Predicate', [[60, 67]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'How much is the friction over land?', [['head', 'A33_41'], ['dep', 'A19_23']]],
+['R1', 'How much is the friction over land?', [['head', 'A33_41'], ['dep', 'A24_32']]],
+['R2', 'Where is the friction?', [['head', 'A33_41'], ['dep', 'A42_51']]],
+['R3', 'What mean thing is this in?', [['head', 'A7_11'], ['dep', 'A12_16']]],
+['R4', 'How fast is the reduction?', [['head', 'A60_67'], ['dep', 'A52_59']]],
+['R5', 'What is reduced?', [['head', 'A60_67'], ['dep', 'A68_82']]],
+['R6', 'What reduces it?', [['head', 'A60_67'], ['dep', 'A33_41']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>

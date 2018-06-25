@@ -1,0 +1,122 @@
+
+    <html>
+ <head>
+   <link rel="stylesheet" type="text/css" href="http://u.cs.biu.ac.il/~stanovg/brat/style-vis.css"/>
+   <script type="text/javascript" src="http://u.cs.biu.ac.il/~stanovg/brat/client/lib/head.load.min.js"></script>
+</head>
+<body>
+
+
+    <script language="javascript">
+
+    var bratLocation = 'http://u.cs.biu.ac.il/~stanovg/brat';
+head.js(
+    // External libraries
+    bratLocation + '/client/lib/jquery.min.js',
+    bratLocation + '/client/lib/jquery.svg.min.js',
+    bratLocation + '/client/lib/jquery.svgdom.min.js',
+
+    // brat helper modules
+    bratLocation + '/client/src/configuration.js',
+    bratLocation + '/client/src/util.js',
+    bratLocation + '/client/src/annotation_log.js',
+    bratLocation + '/client/lib/webfont.js',
+
+    // brat modules
+    bratLocation + '/client/src/dispatcher.js',
+    bratLocation + '/client/src/url_monitor.js',
+    bratLocation + '/client/src/visualizer.js'
+    );
+
+    var webFontURLs = [
+    bratLocation + '/static/fonts/Astloch-Bold.ttf',
+    bratLocation + '/static/fonts/PT_Sans-Caption-Web-Regular.ttf',
+    bratLocation + '/static/fonts/Liberation_Sans-Regular.ttf'
+    ];
+
+
+    var collData = {
+
+    entity_types: [ {
+            type   : 'Predicate',
+            labels : ['Predicate', 'Pr'],
+            bgColor: '#7fa2ff',
+            borderColor: 'darken'
+    },
+    {
+            type   : 'Argument',
+            labels : ['Argument', 'Ar'],
+            bgColor: '#ff6a36',
+            borderColor: 'darken'
+    },
+]
+    };
+
+
+
+
+    
+    var docData_0 = { text: "Latin America had the biggest rise in concern : 73 % said global warming is a serious threat to their families .",
+
+    entities: [
+
+    ['A86_92', 'Predicate', [[86, 92]]],
+['A78_85', 'Predicate', [[78, 85]]],
+['A6_13', 'Predicate', [[6, 13]]],
+['A30_34', 'Predicate', [[30, 34]]],
+['A53_57', 'Predicate', [[53, 57]]],
+['A58_64', 'Predicate', [[58, 64]]],
+['A48_52', 'Predicate', [[48, 52]]],
+['A65_72', 'Predicate', [[65, 72]]],
+['A0_5', 'Predicate', [[0, 5]]],
+['A38_45', 'Predicate', [[38, 45]]],
+['A18_29', 'Predicate', [[18, 29]]]
+
+    ],
+
+    relations: [
+
+    ['R0', 'what kind of threat?', [['head', 'A86_92'], ['dep', 'A78_85']]],
+['R1', 'Where was there a rise?', [['head', 'A30_34'], ['dep', 'A0_5']]],
+['R2', 'What is the rise in?', [['head', 'A30_34'], ['dep', 'A38_45']]],
+['R3', 'What kind of rise?', [['head', 'A30_34'], ['dep', 'A18_29']]],
+['R4', 'What did 73% say that global warming is?', [['head', 'A53_57'], ['dep', 'A86_92']]],
+['R5', 'Where have 73% said it is a serious threat? ', [['head', 'A53_57'], ['dep', 'A0_5']]],
+['R6', 'What did 73% say that global warming is?', [['head', 'A53_57'], ['dep', 'A30_34']]],
+['R7', 'What did 73% say that global warming is?', [['head', 'A53_57'], ['dep', 'A65_72']]],
+['R8', 'What number said warming is a threat?', [['head', 'A53_57'], ['dep', 'A48_52']]],
+['R9', 'What type of warming?', [['head', 'A65_72'], ['dep', 'A58_64']]],
+['R10', 'What is Latin?', [['head', 'A0_5'], ['dep', 'A6_13']]]
+
+    ]
+    };
+
+    
+
+
+     head.ready(function() {
+    
+        Util.embed(
+        // id of the div element where brat should embed the visualisations
+        'label_0',
+        // object containing collection data
+        collData,
+        // object containing document data
+        docData_0,
+        // Array containing locations of the visualisation fonts
+        webFontURLs
+        );
+    
+
+});
+
+  </script>
+
+    
+    <div id="label_0"></div>
+    <br><br>
+    
+
+
+</body>
+</html>
