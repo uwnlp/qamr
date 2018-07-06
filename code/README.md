@@ -116,7 +116,8 @@ If you have any questions, or if anything doesn't work as expected, please file 
 
 To run the manual analysis to produce the numbers in the NAACL paper, run `scripts/run_analysis.sh`.
 You can also produce a SQuAD-formatted version of the dataset with `scripts/write_squad_formatted.sh`.
-The `.json` files will be in `data/example/static/out/`.
+The `.json` files will be in `data/example/static/out/`. Make sure to download the wiki1k dataset
+with `scripts/setup.sh` first.
 
 See the `manual-analysis/` directory for the 150-question sample we annotated for the manual analysis,
 including a description of the coding scheme.
