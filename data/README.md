@@ -18,6 +18,9 @@ Both versions have the same format
      For the `Wiki1k` IDs, their (pre-tokenized with space-separation) sentences are given in
      `wiki-sentences.tsv`. For the `PTB` IDs, you must have the Penn Treebank corpus and align them
      yourself. (The format of the ID string for these is `PTB:<section>/<filename>:<sentence num>`.)
+     The sentence numbers correspond to the index of the sentence's parse tree in the Penn Treebank
+     `.MRG` file, and the token indices for these sentences are calculated after removing empty
+     elements (whose part of speech is labeled `-NONE-`).
   1. **Set of target words (space-separated nats).** Together with the sentence ID, this corresponds
      to a single HIT, a unit of work that can be assigned to a worker. The target words are
      indicated by their token indices in the sentence.
